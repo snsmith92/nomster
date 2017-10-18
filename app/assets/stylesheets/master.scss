@@ -34,3 +34,17 @@ body{
   font-family: 'fira_sanseight', sans-serif;
   font-size: 26px;
 }
+
+.digg_pagination a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5;
+    font-family: 'fira_sansbook';
+    font-size: 18px;
+  }
+
+.digg_pagination {
+    font-family: 'fira_sansbook';
+    font-size: 18px;
+    text-align: center;
+  }
