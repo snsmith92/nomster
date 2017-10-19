@@ -66,4 +66,5 @@ gem 'will_paginate', '~> 3.1.1'
 #Add simple_form gem
 gem 'simple_form'
 
-
+#Add font-awesome gem
+gem "font-awesome-rails"
