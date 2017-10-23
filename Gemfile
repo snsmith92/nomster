@@ -71,3 +71,9 @@ gem "font-awesome-rails"
 
 #Add devise gem for user authentication
 gem 'devise'
+
+#Add geocoder gem for map integration
+gem 'geocoder'
+
+#Add Figaro gem for securing of sensitive information
+gem 'figaro'
