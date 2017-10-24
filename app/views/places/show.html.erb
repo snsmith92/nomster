@@ -37,15 +37,19 @@
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this entry?'}, class: 'btn btn-danger' %>
     <% end %>
   </div>
-
+  <br />
   <br class="clear" />
 
+  <h2> Comments </h2>
+  <br/>
 
     <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Add A Comment
   </button>
 
+  <div class="clear"></div>
+  
   <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -74,21 +78,21 @@
   <br class="clear" />
   <br />
 
-  <h2> Comments </h2>
-  <br/>
-  <% @place.comments.each do |comment| %>
-    <div>
-      <blockquote>
-        <% if comment.humanized_rating.present? %>
-          <b><%= comment.humanized_rating %></b>
-        <% end %>
-        <br />
-        <%= comment.message %>
-        <br />
-        <small><i> <%= comment.user.email %></i></small>
-        <br />
-      </blockquote>
-    </div>
-  <% end %>
+  <div class="row" >
+    <% @place.comments.each do |comment| %>
+      <div class="col-12 col-sm-6">
+        <blockquote>
+          <% if comment.humanized_rating.present? %>
+            <b><%= comment.humanized_rating %></b>
+          <% end %>
+          <br />
+          <%= comment.message %>
+          <br />
+          <small><i> <%= comment.user.email %></i></small>
+          <br />
+        </blockquote>
+      </div>
+    <% end %>
+  </div>
 </div>
 
