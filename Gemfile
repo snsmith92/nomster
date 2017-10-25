@@ -77,3 +77,9 @@ gem 'geocoder'
 
 #Add Figaro gem for securing of sensitive information
 gem 'figaro'
+
+#Add Carrierwave gem for photo upload
+gem 'carrierwave', '~> 1.0'
+
+#Add fog gem
+gem 'fog-aws'
