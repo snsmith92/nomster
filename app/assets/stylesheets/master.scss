@@ -5,13 +5,27 @@
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 #d0d0d0;
-  background: #fff;
+  background: #bce5f2;
+  border: 1px solid #ccc;
+  border-color: black;
+  margin-top: 10px;
+  margin-bottom: 15px; 
+  padding: 20px; 
+}
+
+
+.comment-box{
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #bce5f2;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   margin-top: 10px;
   margin-bottom: 15px; 
   padding: 20px; 
 }
+
 
 
 .booyah-box-users{
@@ -27,12 +41,13 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'fira_sanseight', sans-serif;
   margin:0;
   padding:0;
 }
 
 body{
-  background: image_url('concrete_wall.png');
+  /*background: image_url('concrete_wall.png');
   /* Modern Georgia-based serif stack */
   font-family: 'fira_sansbook';
 }
@@ -100,4 +115,11 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+}
+
+.user_photo {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
 }
