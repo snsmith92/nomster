@@ -118,22 +118,8 @@
   </div>
 
 
-  <br class="clear"/> 
-
   <div class = "comment-box col-10 offset-1">
-
-  <h2> Comments </h2>
-  <br />
-  <div class = "float-left"
-    <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Add A Comment
-  </button>
-  </div>
-
-  <br class="clear"/>
-  <br />
-
+  
   <div class="clear"></div>
   
   <!-- Modal -->
@@ -160,30 +146,36 @@
     </div>
   </div>
 
-  <div class="row" >
-    <% if @place.comments.present? %>
-      <% @place.comments.each do |comment| %>
-        <div class="col-12 col-sm-6">
-          <blockquote>
-            <% if comment.humanized_rating.present? %>
-              <b><%= comment.humanized_rating %></b>
-            <% end %>
-            <br />
-            <%= comment.message %>
-            <br />
-            <small><i> <%= comment.user.email %></i></small>
-            <br />
-          </blockquote>
-        </div>
-      <% end %>
-    <% else %>
-      <div class = "notice"> No comments have been added yet. Be the first! </div>
-      <br />
-      <br />
-    <% end %>
+  <div class="photo-box" >
+    <h2> Comments </h2>
+    <br />
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add A Comment
+    </button>
+    <br/>
+      <div class="row">
+        <% if @place.comments.present? %>
+          <% @place.comments.each do |comment| %>
+            <div class="col-12">
+              <blockquote>
+                <% if comment.humanized_rating.present? %>
+                  <b><%= comment.humanized_rating %></b>
+                <% end %>
+                <br />
+                <%= comment.message %>
+                <br />
+                <small><i> <%= comment.user.email %></i></small>
+                <br />
+              </blockquote>
+            </div>
+          <% end %>
+        <% else %>
+          <div class = "notice"> No comments have been added yet. Be the first! </div>
+          <br />
+          <br />
+        <% end %>
   </div>
-
-</div>
 
 </div>
 
