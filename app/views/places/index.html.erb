@@ -1,12 +1,21 @@
 <% @places.each do |place| %> 
   <div class="booyah-box col-10 offset-1">
+    
     <h1><%= link_to place.name, place_path(place) %></h1>
     <i><%= place.address %></i><br /> <br />
     <p><%= place.description %></p><br />
 
     <% if place.user.present? %>
-      <small><%= place.user.email %></small>
+      <small><i><%= place.user.email %></i></small>
     <% end %>
+    <br />
+    <br />
+
+    <% if place.photos.present? %> 
+      <%= image_tag place.photos.last.picture, class: "img-fluid" %>    
+      <br />               
+    <% end %>
+
 
     <%if place.comments.present? %>
       <div class="col-12">
@@ -24,8 +33,9 @@
       <% end %>
     </div>
 
-<% end %>
+  <% end %>
 
+</div> 
 
 <br />
 
@@ -35,6 +45,3 @@
     </div>
     <%= will_paginate @posts, :container => false %>
 </div>
-
-<br />
-<br />
