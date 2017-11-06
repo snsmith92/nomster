@@ -18,6 +18,20 @@
 
 <br />
 
+
+<div class="booyah-box col-10 offset-1">
+  <h3 class="text-center">Your Places</h3>
+  <br/>
+    <% @user.places.each do |place| %> 
+      <%= link_to place.name, place_path(place) %>
+      <i><small><%= place.address %></small></i>
+      <p><small><%= place.description %></small></p><br />
+    <% end %>
+</div class="clear"></div>
+
+<br />
+
+
 <div class="booyah-box col-10 offset-1">
   <h3 class="text-center"> Your Comments </h3>
   <div class = "row">
