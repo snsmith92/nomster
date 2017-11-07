@@ -10,8 +10,8 @@
       <br />
       <h3> Member Since: <%= @user.created_at.strftime("%B %d, %Y") %> </h3>
       <br />
-      <h4><%= @user.comments.count %> total comments </h4>
-      <h4><%= @user.comments.where(rating: '5_stars').count %> total 5 star reviews </h4>
+      <h4><i><%= @user.comments.count %> total comments </i></h4>
+      <h4><i><%= @user.comments.where(rating: '5_stars').count %> total 5 star reviews </i></h4>
     </div>
   </div class="clear"></div>
 </div>
@@ -22,11 +22,16 @@
 <div class="booyah-box col-10 offset-1">
   <h3 class="text-center">Your Places</h3>
   <br/>
+  <% if @user.places.present? %>
     <% @user.places.each do |place| %> 
       <%= link_to place.name, place_path(place) %>
       <i><small><%= place.address %></small></i>
       <p><small><%= place.description %></small></p><br />
     <% end %>
+  <% else %>
+    <h6> You haven't made any places yet! <%= link_to 'Add A Place Now!', new_place_path %> </h6>
+    <br />
+  <% end %>
 </div class="clear"></div>
 
 <br />
@@ -34,18 +39,25 @@
 
 <div class="booyah-box col-10 offset-1">
   <h3 class="text-center"> Your Comments </h3>
-  <div class = "row">
-    <% @user.comments.each do |comment| %>
-      <div class="col-12 col-sm-6">
-        <blockquote>
-          <% if comment.humanized_rating.present? %>
-            <b><%= comment.humanized_rating %></b> -
-          <% end %>
-          <strong> <%= link_to comment.place.name, place_path(comment.place) %> </strong>
-          <br />
-          <%= comment.message %>
-        </blockquote>
-      </div>
-    <% end %>
-  </div>
+  <% if @user.comments.present? %>
+    <div class = "row">
+      <% @user.comments.each do |comment| %>
+        <div class="col-12 col-sm-6">
+          <blockquote>
+            <% if comment.humanized_rating.present? %>
+              <b><%= comment.humanized_rating %></b> -
+            <% end %>
+            <strong> <%= link_to comment.place.name, place_path(comment.place) %> </strong>
+            <br />
+            <%= comment.message %>
+          </blockquote>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <br/>
+    <h6> You haven't made any comments yet! </h6>
+    <br />
+  <% end %>
+
 </div>

@@ -5,8 +5,7 @@
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 #d0d0d0;
-  /* background-color: rgba(0, 0, 255, 0.3); */
-  background-color: hsla(195, 60%, 70%, 0.2);
+  background-color: white;
   border: 1px solid #ccc;
   border-color: black;
   margin-top: 10px;
@@ -40,16 +39,24 @@
   padding: 20px; 
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1{
   font-family: 'fira_sanseight', sans-serif;
   margin:0;
   padding:0;
 }
 
+h2, h3, h4, h5, h6 {
+  font-family: 'open_sanslight';
+  margin:0;
+  padding:0;
+}
+
+
+
 body{
-  background: image_url('fabric.png');
+  background: image_url('dust_scratches.png');
   /* Modern Georgia-based serif stack */
-  font-family: 'fira_sansbook';
+  font-family: 'open_sansregular';
 }
 
 
@@ -67,20 +74,26 @@ body{
 .navbar-inverse .navbar-brand {
   color: #90C3D4;
   font-family: 'fira_sanseight', sans-serif;
-  font-size: 26px;
+  font-weight: bold;
+  font-size: 30px;
 }
+
+.nav-link {
+  font-family: 'open_sanslight';
+}
+
 
 .digg_pagination a {
     text-decoration: none;
     color: #105cb6;
     border: 1px solid #9aafe5;
-    font-family: 'fira_sansbook';
-    font-size: 18px;
+    font-family: 'open_sansitalic';
+    font-size: 14px;
   }
 
 .digg_pagination {
-    font-family: 'fira_sansbook';
-    font-size: 18px;
+    font-family: 'open_sansitalic';
+    font-size: 14px;
     text-align: center;
   }
 
@@ -105,23 +118,32 @@ html, body {
   clear:both;
 }
 
+
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
+  display:block;
+  background: #fff;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  font-family: 'open_sansitalic';
+  font-size: 14px;
+  line-height: 1.2;
+  color: #666;
+
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 2px 2px 15px #ccc;
+  -webkit-box-shadow: 2px 2px 15px #ccc;
+  box-shadow: 2px 2px 15px #ccc;
+
+  /*Borders - (Optional)*/
+  border-left-style: solid;
+  border-left-width: 15px;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-left-color: #5e9de6;
+  border-right-color: #4b8ad6;    
 }
 
 .img2 {
@@ -135,21 +157,26 @@ blockquote p {
 }
 
 .carousel-caption{
-  font-family: 'fira_sanseight', sans-serif;
+  font-family: 'open_sansitalic', sans-serif;
   font-weight: 100;
-  font-size: 30px;
+  font-size: 25px;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   position: absolute;
   left: 0;
 }
-
+/*
 .carousel {
   box-shadow: 0px 3px 8px #2a2a2a;
-}
+}*/
 
 .profile-photo{
   border-style: solid;
   border-radius: 12px;
+}
+
+.img-homepage{
+  height: 200px;
+  width: 200px;
 }

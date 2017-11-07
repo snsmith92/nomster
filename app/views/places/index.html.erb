@@ -41,26 +41,20 @@
 <br />
 
 <% @places.each do |place| %> 
-  <div class="booyah-box col-10 offset-1">
+  <div class="booyah-box col-8 offset-2">
     
-    <h1><%= link_to place.name, place_path(place) %></h1>
+    <h3><%= link_to place.name, place_path(place) %></h3>
     <i><%= place.address %></i><br /> <br />
     <p><%= place.description %></p><br />
 
-    <% if place.user.present? %>
-      <small><i><%= place.user.email %></i></small>
-    <% end %>
-    <br />
-    <br />
-
     <% if place.photos.present? %> 
-      <%= image_tag place.photos.last.picture, class: "img-fluid" %>    
+      <%= image_tag place.photos.last.picture, class: "img-homepage" %>    
       <br />               
     <% end %>
 
-
     <%if place.comments.present? %>
-      <div class="col-12">
+      <br />
+      <div class="col-8">
           <blockquote>
             <% if place.comments.last.humanized_rating.present? %>
               <b><%= place.comments.last.humanized_rating %></b>
@@ -69,10 +63,15 @@
             <%= place.comments.last.message %>
             <br />
             <small><i> <%= place.comments.last.user.email %></i></small>
-            <br />
           </blockquote>
         </div>
       <% end %>
+
+    <% if place.user.present? %>
+      <small><i><%= place.user.email %></i></small>
+    <% end %>
+    <br />
+
     </div>
 
   <% end %>
@@ -87,3 +86,5 @@
     </div>
     <%= will_paginate @posts, :container => false %>
 </div>
+<br />
+<br />
